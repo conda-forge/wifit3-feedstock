@@ -1,5 +1,5 @@
 context:
-  version: "0.5.2"
+  version: "0.5.3"
 
 package:
   name: wifit3
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/derv82/wifit3/archive/v${{ version }}.tar.gz
-  sha256: aacc61c9a545039af070baf66e39fd89c1e22903ebb142120c537cb8b957f486
+  sha256: f7af9cf9cbf84af0438a986048a082440dfb64f6e5c0d6d09b5dcac3d61f8436
   patches:
     # build for the native arch only; conda's python and libusb_package are thin.
     - 0001-native-target-arch.patch
