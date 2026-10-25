@@ -16,7 +16,7 @@ build:
   number: 0
   script:
     content:
-      - uv run pyinstaller wifit3.spec --noconfirm --clean
+      - uv run --python 3.12 pyinstaller wifit3.spec --noconfirm --clean
       - if: unix
         then:
           - mkdir -p "$PREFIX/bin"
