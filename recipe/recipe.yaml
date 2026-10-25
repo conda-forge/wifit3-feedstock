@@ -1,5 +1,5 @@
 context:
-  version: "0.5.3"
+  version: "0.6.0"
 
 package:
   name: wifit3
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/derv82/wifit3/archive/v${{ version }}.tar.gz
-  sha256: f7af9cf9cbf84af0438a986048a082440dfb64f6e5c0d6d09b5dcac3d61f8436
+  sha256: 5627b54ee6427e44ef0b9caf56ff2e5ef4a5a418a667a0faded0a7c7c5d148a4
   patches:
     # build for the native arch only; conda's python and libusb_package are thin.
     - 0001-native-target-arch.patch
@@ -16,7 +16,7 @@ build:
   number: 0
   script:
     content:
-      - uv run pyinstaller wifit3.spec --noconfirm --clean
+      - uv run --python 3.12 pyinstaller wifit3.spec --noconfirm --clean
       - if: unix
         then:
           - mkdir -p "$PREFIX/bin"
